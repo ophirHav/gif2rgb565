@@ -56,7 +56,8 @@ def main():
         print("const unsigned int %s_height = %d;" % (array_name, im.size[1]), file=outfile)
         print("const unsigned int %s_frames = %d;" % (array_name, im.n_frames), file=outfile)
         print("", file=outfile)
-        print("const static uint16_t %s[%d][] PROGMEM= {" % (array_name, im.n_frames), file=outfile)
+                print("const static uint16_t %s[%d][%d] PROGMEM= {" % \
+                (array_name, im.n_frames,im.size[0]*im.size[1]), file=outfile)
 
     try:
         for frame in range(im.n_frames):
