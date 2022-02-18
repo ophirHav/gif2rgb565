@@ -60,11 +60,12 @@ def main():
         print("\t\tconst unsigned int _width;" ,file=outfile)
         print("\t\tconst unsigned int _height;" ,file=outfile)
         print("\t\tconst unsigned int _frames_count;" ,file=outfile)
-        print("\t\tconst unsigned int next_frame;" , file=outfile)
+        print("\t\tunsigned int next_frame;" , file=outfile)
+        print("\t\tunsigned long last_frame_time;" , file=outfile)
         print("\t\tconst uint16_t* data;" , file=outfile)
         print("} %s;" % (array_name.capitalize()), file=outfile)
         print("", file=outfile)
-        print("%s %s_gif = {._width = %s, ._height = %s, ._frames_count = %s, .next_frame = 0, .data = %s_data};" % \
+        print("%s %s_gif = {._width = %s, ._height = %s, ._frames_count = %s, .next_frame = 0, .last_frame_time = 0 , .data = %s_data};" % \
                 (array_name.capitalize(), array_name, im.size[0], im.size[1], im.n_frames, array_name), file=outfile)
         
         print("", file=outfile)
